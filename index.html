@@ -71,48 +71,27 @@
           </div>
         </div>
       </div>
+      <!-- Software de transacciones Inicio-->
+
       <div class="col-3 informacion collapse collapse-horizontal" id="transacciones">
         <h4>Transacciones</h4>
-        <h3>$0</h3>
-
-        <h3>Ingresa un monto:</h3>
-        <table class="d-flex justify-content-center">
-          <tr>
-            <td><button class="btn btn-outline-secondary px-3" href="#" role="button" id="">1</button></td>
-            <td><button class="btn btn-outline-secondary px-3" href="#" role="button" id="">2</button></td>
-            <td><button class="btn btn-outline-secondary px-3" href="#" role="button" id="">3</button></td>
-          </tr>
-          <tr>
-            <td><button class="btn btn-outline-secondary px-3" href="#" role="button" id="">4</button></td>
-            <td><button class="btn btn-outline-secondary px-3" href="#" role="button" id="">5</button></td>
-            <td><button class="btn btn-outline-secondary px-3" href="#" role="button" id="">6</button></td>
-          </tr>
-          <tr>
-            <td><button class="btn btn-outline-secondary px-3" href="#" role="button" id="">7</button></td>
-            <td><button class="btn btn-outline-secondary px-3" href="#" role="button" id="">8</button></td>
-            <td><button class="btn btn-outline-secondary px-3" href="#" role="button" id="">9</button></td>
-          </tr>
-          <tr>
-            <td><button class="btn btn-outline-warning px-1" href="#" role="button" id="">DEL</button></td>
-            <td><button class="btn btn-outline-secondary px-3" href="#" role="button" id="">0</button></td>
-            <td><button class="btn btn-outline-success px-2" href="#" role="button">OK</button></td>
-          </tr>
-        </table>
-        <h3 class="mt-4">¿Que quieres hacer?</h3>
+        <h3>Ingrese un monto:</h3>
+        <div class="input-group mb-3">
+          <span class="input-group-text">$</span>
+          <input id="money" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" />
+        </div>
+        <h3>¿Que quieres hacer?</h3>
         <section>
-          <div>
-            <button type="button" class="btn btn-outline-primary">
-              Hacer un avance
-            </button>
-            <button type="button" class="btn btn-outline-success">
-              Ingresar dinero
-            </button>
-            <button type="button" class="btn btn-outline-danger">
-              Retira tu dinero
-            </button>
+          <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+            <button id="btnAdvance" type="button" class="btn btn-outline-primary">Hacer un avance</button>
+            <button id="btnDeposit" type="button" class="btn btn-outline-success">Depositar dinero</button>
+            <button id="btnWithdraw" type="button" class="btn btn-outline-danger">Retira tu dinero</button>
           </div>
+          <h2 id="movement"></h2>
         </section>
       </div>
+
+      <!--Fin software transacciones-->
       <div class="col-4 informacion collapse collapse-horizontal" id="movimientos">
         <h4>Movimientos</h4>
         <table class="table">
