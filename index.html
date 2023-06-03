@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="./src/css/styles.css">
+  <link rel="stylesheet" href="./src/css/cards.css">
+  <link rel="stylesheet" href="./src/css/services.css">
+  <link rel="stylesheet" href="./src/css/table.css">
+  <title>WebTech Bank</title>
+</head>
+
+<body onload="onInit()">
+  <section>
+    <div class="row">
+      <div class="col-2 d-flex align-items-center navbar-div">
+        <nav id="navbar-example3" class="flex-column align-items-stretch">
+          <nav class="nav nav-pills flex-column">
+            <a class="nav-link" data-bs-toggle="collapse" href="#" role="button" aria-expanded="false"
+              aria-controls="collapseExample" onclick="show('productos')"><img src="./src/img/billetera.png" alt=""> Tus
+              productos</a>
+            <a class="nav-link " data-bs-toggle="collapse" href="#" role="button" aria-expanded="false"
+              aria-controls="collapseExample" onclick="show('transacciones')"><img src="./src/img/cambio-de-dinero.png"
+                alt=""> Transferir dinero</a>
+            <a class="nav-link " data-bs-toggle="collapse" href="#" role="button" aria-expanded="false"
+              aria-controls="collapseExample" onclick="show('movimientos')"><img src="./src/img/documento.png" alt="">
+              Ver movimientos</a>
+          </nav>
+        </nav>
+      </div>
+      <!-- collapse.show collapse-horizontal -->
+      <div class="col-3 informacion collapse-horizontal" id="productos">
+        <h3 id="bienvenida"></h3>
+
+        <h4>Tus productos</h4>
+
+        <div class="card card-ahorros m-3">
+          <div class="card-body">
+            <h5 class="card-title">Cuenta de ahorros</h5>
+            <p>No. <span class="number"></span></p>
+            <h5 id="saldo" class="text-body-secondary p-1"></h5>
+          </div>
+        </div>
+        <div class="card hover m-3">
+          <div class="wrapper">
+            <div class="cc visa">
+              <div class="container">
+                <div class="type">Débito</div>
+                <div class="circuit"><img src="./src/img/visa.png" alt=""></div>
+              </div>
+              <div class="holder"><span class="name"></span><span class="number"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card hover m-3">
+          <div class="wrapper">
+            <div class="cc mastercard">
+              <div class="container">
+                <div class="type">Crédito</div>
+                <div class="circuit"><img src="./src/img/mastercard.png" alt=""></div>
+              </div>
+              <div class="holder"><span class="name"></span><span class="number"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 informacion collapse collapse-horizontal" id="transacciones">
+        <h4>Transacciones</h4>
+        <h3>$0</h3>
+
+        <h3>Ingresa un monto:</h3>
+        <table class="d-flex justify-content-center">
+          <tr>
+            <td><button class="btn btn-outline-secondary px-3" href="#" role="button" id="">1</button></td>
+            <td><button class="btn btn-outline-secondary px-3" href="#" role="button" id="">2</button></td>
+            <td><button class="btn btn-outline-secondary px-3" href="#" role="button" id="">3</button></td>
+          </tr>
+          <tr>
+            <td><button class="btn btn-outline-secondary px-3" href="#" role="button" id="">4</button></td>
+            <td><button class="btn btn-outline-secondary px-3" href="#" role="button" id="">5</button></td>
+            <td><button class="btn btn-outline-secondary px-3" href="#" role="button" id="">6</button></td>
+          </tr>
+          <tr>
+            <td><button class="btn btn-outline-secondary px-3" href="#" role="button" id="">7</button></td>
+            <td><button class="btn btn-outline-secondary px-3" href="#" role="button" id="">8</button></td>
+            <td><button class="btn btn-outline-secondary px-3" href="#" role="button" id="">9</button></td>
+          </tr>
+          <tr>
+            <td><button class="btn btn-outline-warning px-1" href="#" role="button" id="">DEL</button></td>
+            <td><button class="btn btn-outline-secondary px-3" href="#" role="button" id="">0</button></td>
+            <td><button class="btn btn-outline-success px-2" href="#" role="button">OK</button></td>
+          </tr>
+        </table>
+        <h3 class="mt-4">¿Que quieres hacer?</h3>
+        <section>
+          <div>
+            <button type="button" class="btn btn-outline-primary">
+              Hacer un avance
+            </button>
+            <button type="button" class="btn btn-outline-success">
+              Ingresar dinero
+            </button>
+            <button type="button" class="btn btn-outline-danger">
+              Retira tu dinero
+            </button>
+          </div>
+        </section>
+      </div>
+      <div class="col-4 informacion collapse collapse-horizontal" id="movimientos">
+        <h4>Movimientos</h4>
+        <table class="table">
+          <thead class="fechaDescripcionMonto">
+            <tr>
+              <th>Fecha</th>
+              <th>Descripción</th>
+              <th>Monto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2023-05-01</td>
+              <td>
+                <a href="#purchase" onclick="showTransactionDetail('purchase')">Compra en línea</a>
+                <div id="detail-purchase" class="hidden">
+                  <p>Banco le informa compra por $4100 en Falabella.com</p>
+                </div>
+              </td>
+              <td>$50.00</td>
+            </tr>
+            <tr>
+              <td>2023-05-05</td>
+              <td>
+                <a href="#pay" onclick="showTransactionDetail('pay')">Pago de factura</a>
+                <div id="detail-pay" class="hidden">
+                  <p>
+                    Banco le informa pago a facturas movistar por un valor de
+                    $2800
+                  </p>
+                </div>
+              </td>
+              <td>$80.00</td>
+            </tr>
+            <tr>
+              <td>2023-05-10</td>
+              <td>
+                <a href="#transfer" onclick="showTransactionDetail('transfer')">Transferencia recibida</a>
+                <div id="detail-transfer" class="hidden">
+                  <p>
+                    Transferencia cta suc virtual por valor $1000 de otros
+                    bancos
+                  </p>
+                </div>
+              </td>
+              <td>$150.00</td>
+            </tr>
+            <tr>
+              <td>2023-05-15</td>
+              <td>
+                <a href="#cashOut" onclick="showTransactionDetail('cashOut')">Retiro en efectivo</a>
+                <div id="detail-cashOut" class="hidden">
+                  <p>
+                    Retiro ATM por $300 en centro comercial Multiplaza, si
+                    usted no ha realizado esta transaccion porfavor comincarse
+                    al (123)4567890
+                  </p>
+                </div>
+              </td>
+              <td>$100.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="others col">
+        <div class="row">
+          <div class="col-12">
+            <div class="salida">
+              <a href="./src/pages/registro.html" class="d-flex justify-content-end m-3">Cerrar sesión<img src="./src/img/logout.png" alt=""></a>
+            </div>
+            <h4 class="col-12 ms-4">Servicios</h4>
+          </div>
+          <div class="col-6">
+            <div class="servicios ps-4">
+              <div class="row card card-servicios m-3 px-3 py-4 d-flex">
+                <div class="col-12">
+                  <h5 class="card">Cuenta de ahorros</h5>
+                </div>
+                <div class="col-12">
+                  <div class="row my-3">
+                    <div class="col-8">
+                      <p>Escoge la cuenta que se adapte a tus necesidades</p>
+                    </div>
+                    <div class="col col d-flex justify-content-center">
+                      <img class="ahorro-img" src="./src/img/ahorro.png" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="button" class="btn btn-warning">Abre una cuenta</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col another-services mt-3 ms-5">
+            <div class="row mb-3">
+              <div class="col-4 d-flex justify-content-center">
+                <div class="item hover d-flex flex-wrap justify-content-center p-2">
+                  <img src="./src/img/celular.png" alt="">
+                  <h3 class="text-center">Recarga tu celular</h3>
+                </div>
+              </div>
+              <div class="col-4 d-flex justify-content-center">
+                <div class="item hover d-flex flex-wrap justify-content-center p-2">
+                  <img src="./src/img/factura.png" alt="">
+                  <h3 class="text-center">Paga tus facturas</h3>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-4 d-flex justify-content-center">
+                <div class="item hover d-flex flex-wrap justify-content-center p-2">
+                  <img src="./src/img/bolsillo.png" alt="">
+                  <h3 class="text-center">Abre bolsillos</h3>
+                </div>
+              </div>
+              <div class="col-4 d-flex justify-content-center">
+                <div class="item hover d-flex flex-wrap justify-content-center p-2">
+                  <img src="./src/img/transferir.png" alt="">
+                  <h3 class="text-center">Transfiere dinero</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="./src/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

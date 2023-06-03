@@ -1,0 +1,11 @@
+.hidden {
+  display: none;
+  font-size: 14px;
+}
+.table{
+  width: 25;
+}
+th, td {
+  width: 5%;
+  text-align: left;
+}

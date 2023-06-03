@@ -1,0 +1,42 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  text-decoration: none;
+}
+h2 {
+  font-size: medium;
+}
+h3 {
+  font-size: small;
+}
+h4 {
+  color:#6b6b6b;
+}
+.navbar-div {
+  background-color: #1e1e8d;
+  height: 100vh;
+} 
+.nav-pills a {
+  color: white;
+}
+.card {
+  border: none;
+}
+.card-ahorros {
+  border: 1px solid #e6e6e66e;
+  border-radius: 16px;
+  box-shadow: #00000010 0px 4px 12px;
+}
+.informacion {
+  border-right: 1px solid #e6e6e66e;
+  box-shadow: 9px 0px 33px -8px #6e6e6e49;
+}
+.aActive {
+  background-color: aliceblue;
+  font-weight: bold;
+}
+.salida a {
+  text-decoration: none;
+  color: #1e1e8d;
+  font-weight: bold;
+}
