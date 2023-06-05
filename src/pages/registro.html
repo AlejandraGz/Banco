@@ -24,50 +24,45 @@
         <div class="slider-tab"></div>
       </div>
       <div class="form-inner">
-        <form action="#" class="login">
-          <div class="field">
-            <input type="text" placeholder="Usuario" required>
-          </div>
-          <div class="field">
-            <input type="password" placeholder="Clave" required>
-          </div>
+        <form action="#" class="login" id="formLogin">
+          <div class="field"><input id="nameLogin" type="text" placeholder="Usuario" required></div>
+          <div class="field"><input id="passwordLogin" type="password" pattern="[0-9]*" maxlength="4" value=""
+              onkeypress="preventNonNumericalInput(event)" placeholder="Clave" required></div>
           <div class="pass-link"><a href="#">¿Olvidaste tu contraseña?</a></div>
           <div class="field btn">
-            <div class="btn-layer"></div>
-            <input type="submit" value="Iniciar Sesión">
+            <div class="btn-layer"></div><input type="submit" value="Iniciar Sesión">
           </div>
           <div class="signup-link">¿No estás registrado? <a href="">Registrate ahora</a></div>
         </form>
-        <form action="#" class="signup">
+        <form action="#" class="signup" id="formSignup">
+          <div class="field"><input id="nameSignup" type="text" placeholder="Nombre" required></div>
+          <div class="field"><input id="lastNameSignup" type="text" placeholder="Apellidos" required></div>
           <div class="field">
-            <input type="text" placeholder="Nombre" required>
+            <select id="genderSignup" name="gender" placeholder="Género" required>
+              <option value="" class="option">Género</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Femenino">Femenino</option>
+              <option value="otro">Otro</option>
+            </select>
           </div>
-          <div class="field">
-            <input type="text" placeholder="Apellidos" required>
+          <div class="field"><input id="userNameSignup" type="text" placeholder="Usuario" required></div>
+          <div class="field"><input id="emailSignup" type="text" placeholder="Correo electronico" required></div>
+          <div class="field"><input id="passwordSignup" type="password" pattern="[0-9]*" maxlength="4" value=""
+              onkeypress="preventNonNumericalInput(event)" placeholder="Clave numérica de 4 digitos" required></div>
+          <div class="field"><input id="passwordConfirmation" type="password" pattern="[0-9]*" maxlength="4" value=""
+              onkeypress="preventNonNumericalInput(event)" placeholder="Confirma tu clave" required></div>
+          <div class="pass-link">
+            <p id="messagePassword"></p>
           </div>
-          <div class="field">
-            <input type="text" placeholder="Usuario" required>
-          </div>
-          <div class="field">
-            <input type="text" placeholder="Correo electronico" required>
-          </div>
-          <div class="field">
-            <input type="password" placeholder="Clave" required>
-          </div>
-          <div class="field">
-            <input type="password" placeholder="Confirma tu clave" required>
-          </div>
-          
           <div class="field btn">
-            <div class="btn-layer"></div>
-            <input type="submit" value="Registrarse">
+            <div class="btn-layer"></div><input type="submit" value="Registrarse">
           </div>
         </form>
       </div>
     </div>
   </div>
-
-  <script src="../js/script.js"></script>
+  <script src="../js/user.js"></script>
+  <script src="../js/signup.js"></script>
 </body>
 
 </html>

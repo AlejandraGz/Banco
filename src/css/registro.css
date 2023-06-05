@@ -112,7 +112,7 @@ input[type="radio"]{
   width: 100%;
   margin-top: 5px;
 }
-.form-inner form .field input{
+.form-inner form .field input, .field select{
   height: 100%;
   width: 100%;
   outline: none;
@@ -127,7 +127,7 @@ input[type="radio"]{
   border-color: #1a75ff;
   /* box-shadow: inset 0 0 3px #fb6aae; */
 }
-.form-inner form .field input::placeholder{
+.form-inner form .field input::placeholder, select option p{
   color: #999;
   transition: all 0.3s ease;
 }
